@@ -1,14 +1,19 @@
 @echo off
 color 57
-echo Hey, do you love me ? (answer only with "yes" or "not")
+echo Hey, do you love me? (answer only with "yes" or "no")
 set /p love=
-if %love%==oui goto love
-if %love%==non goto hate
+if /i "%love%"=="yes" (
+    goto love
+) else (
+    goto hate
+)
+
 :love
 echo I love you too...
 echo See you soon :)
 pause
 exit
+
 :hate
 echo But... I love you... Hehehehe
 echo You got hacked...
